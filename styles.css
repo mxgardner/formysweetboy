@@ -67,7 +67,7 @@ body {
     word-break: break-word;
     line-height: 1.1;
     animation: riseAndExpand 3s ease-out forwards, breathe 2s ease-in-out 3s forwards;
-    opacity: 0;
+    opacity: 1;
 } 
 
 @keyframes riseAndExpand {
