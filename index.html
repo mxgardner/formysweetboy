@@ -14,7 +14,39 @@
     <div class="text">Will you be my valentine???</div>
     <div class="buttons">
       <button class="button">YES</button>
-      <button class="button">NO</button>
+      <button class="button no-button" id="no-btn">NO</button>
   </div>  
+  <div id="gif-container" class="hidden">
+    <img src="yippee-iluvmybf.gif" alt="Happy GIF" id="yes-gif">
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".button:nth-child(1)").addEventListener("click", function() {
+            let gifContainer = document.getElementById("gif-container");
+            gifContainer.classList.remove("hidden");
+            setTimeout(() => {
+                gifContainer.style.opacity = "1";
+            }, 50);
+        });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const noButton = document.getElementById("no-btn");
+
+        noButton.addEventListener("mouseover", function() {
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noButton.style.position = "absolute";
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    });
+  </script>
+
 </body>
 </html>
